@@ -128,12 +128,15 @@ var normalize = function(data) {
     var opts = _(l.Datasource).clone();
 
     if (opts.file && !tm.absolute(opts.file)) opts.base = tm.parse(data.id).dirname;
-
-    var fields = new mapnik.Datasource(opts).describe().fields;
-    info.fields = _(fields).reduce(function(memo, type, field) {
-      memo[field] = l.fields[field] || type;
-      return memo;
-    }, {});
+    try{
+      var fields = new mapnik.Datasource(opts).describe().fields;
+      info.fields = _(fields).reduce(function(memo, type, field) {
+        memo[field] = l.fields[field] || type;
+        return memo;
+      }, {});
+    }catch(err){
+      
+    }
     return info;
   });
   return data;
