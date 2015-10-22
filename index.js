@@ -172,7 +172,7 @@ var toXML = function(data, callback) {
   });
 
   try {
-    return callback(null, new carto.Renderer().render(tm.sortkeys(opts)));
+    return callback(null, new carto.Renderer().render(opts));
   } catch(err) {
     if (Array.isArray(err)) {
         err.forEach(function(e) {
