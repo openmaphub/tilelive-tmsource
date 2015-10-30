@@ -12,7 +12,7 @@
   },
   "license": "BSD-2-Clause",
   "dependencies": {
-    "tilelive-bridge": "^1.2.5",
+    "tilelive-bridge": "openmaphub/tilelive-bridge",
     "js-yaml": "^3.2.5",
     "carto": "^0.14.1",
     "underscore": "^1.7.0",
